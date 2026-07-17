@@ -32,11 +32,11 @@ jobs:
 
       - name: Build de l'image Docker
         run: |
-          docker build -t europe-west1-docker.pkg.dev/cs-poc-hpzdycpiqjyvinhrczvlwcn/quelpoke-clement/quelpoke:v1.0.0 .
+          docker build -t europe-west1-docker.pkg.dev/cs-poc-hpzdycpiqjyvinhrczvlwcn/quelpoke-clement/quelpoke:latest .
 
       - name: Push de l'image vers Artifact Registry
         run: |
-          docker push ${{ env.REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          docker push europe-west1-docker.pkg.dev/cs-poc-hpzdycpiqjyvinhrczvlwcn/quelpoke-clement/quelpoke:latest
 
       - name: Tag et push "latest" (uniquement sur main)
         if: github.ref == 'refs/heads/main'
