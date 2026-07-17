@@ -32,7 +32,7 @@ jobs:
 
       - name: Build de l'image Docker
         run: |
-          ocker build -t europe-west1-docker.pkg.dev/cs-poc-hpzdycpiqjyvinhrczvlwcn/quelpoke-clement/quelpoke:v1.0.0 .
+          docker build -t europe-west1-docker.pkg.dev/cs-poc-hpzdycpiqjyvinhrczvlwcn/quelpoke-clement/quelpoke:v1.0.0 .
 
       - name: Push de l'image vers Artifact Registry
         run: |
